@@ -56,7 +56,8 @@
     },
     "scripts":
     {
-        "start": "node server.js -a :"
+        "start": "node server.js -a :",
+        "initiate": "node server.js -l 0.0.0.0 -p 4500 -a $ROOT_USER:$ROOT_PASS -w $WORKSPACE_PATH"
     },
     "devDependencies": {},
     "licenses": [],
