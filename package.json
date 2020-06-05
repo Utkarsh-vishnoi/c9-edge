@@ -52,7 +52,7 @@
         "tmp": "~0.0.20",
         "treehugger": "file:node-modules/treehugger",
         "uglify-js": "~2.6.2",
-        "ws": "3.7.0"
+        "ws": "7.3.0"
     },
     "scripts":
     {
