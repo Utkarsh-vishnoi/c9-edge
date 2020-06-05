@@ -67,13 +67,7 @@ updateCore() {
         return 0;
     fi
     
-    # without this git merge fails on windows
-    mv ./scripts/install-sdk.sh  './scripts/.#install-sdk-tmp.sh'
-    rm -f ./scripts/.install-sdk-tmp.sh 
-    cp './scripts/.#install-sdk-tmp.sh' ./scripts/install-sdk.sh
-    git checkout -- ./scripts/install-sdk.sh
-
-    git remote add c9 https://github.com/c9/core 2> /dev/null || true
+    git remote add c9 https://github.com/utkarsh-vishnoi/c9-edge 2> /dev/null || true
     git fetch c9
     git merge c9/master --ff-only || \
         echo "${yellow}Couldn't automatically update sdk core ${resetColor}"
@@ -83,7 +77,6 @@ updateCore() {
 
 installGlobalDeps()
 {
-	/* @HARDCODE */
     if ! [[ -f "/home/ubuntu/workspace/cloud9-ide/home/.c10/installed" ]]; then
         if [[ $os == "windows" ]]; then
             URL=https://raw.githubusercontent.com/cloud9ide/sdk-deps-win32
